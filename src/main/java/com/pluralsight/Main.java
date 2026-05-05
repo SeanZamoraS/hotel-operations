@@ -1,11 +1,16 @@
 package com.pluralsight;
+import java.util.*;
 
 public class Main
 {
+    static Scanner input = new Scanner(System.in);
+    static Employee jimmy = new Employee(22, "Jimmy Bobson", "Customer Relations", 29.80);
+
     public static void main()
     {
-        employeeTest();
+        //employeeTest();
         roomTest();
+        clockTest();
     }
 
     public static void employeeTest()
@@ -33,7 +38,24 @@ public class Main
         double total = johnnyReservation.getReservationTotal();
 
         System.out.println(total);
+    }
+
+    public static void clockTest()
+    {
+        System.out.println("Press enter to clock in");
+        input.nextLine();
+        jimmy.punchTimeCard();
+
+        System.out.println("Press enter to clock out");
+        input.nextLine();
+        jimmy.punchTimeCard();
+
+        System.out.println(jimmy.getHoursWorked());
 
 
     }
+
+
+
+
 }

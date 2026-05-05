@@ -89,7 +89,8 @@ public class Employee
             double minutesShiftTime = shiftTime.toMinutes();
             double hoursShiftTime = minutesShiftTime/60;
 
-            this.hoursWorked = hoursWorked + hoursShiftTime;
+            double roundedShiftTime = (double) Math.round(hoursShiftTime * 1000) /1000;
+            this.hoursWorked = hoursWorked + roundedShiftTime;
         }
     }
 
