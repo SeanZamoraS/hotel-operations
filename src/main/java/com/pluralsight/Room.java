@@ -30,5 +30,22 @@ public class Room
     public void setOccupied(boolean isOccupied) {this.isOccupied = isOccupied;}
     public void setDirty(boolean isDirty) {this.isDirty = isDirty;}
 
+    //methods
+    public void checkIn()
+    {
+        this.isOccupied = true;
+        this.isDirty = true;
+    }
+
+    public void checkOut()
+    {
+        this.isOccupied = false;
+    }
+
+    public void cleanRoom()
+    {
+        this.isDirty = false;
+    }
+
 
 }

@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.*;
+
 public class Employee
 {
     int employeeID;
@@ -9,6 +11,8 @@ public class Employee
     double hoursWorked;
 
     boolean workedOvertime;
+    boolean isClockedIn = false;
+    LocalDateTime clockInTime;
 
     //constructors
     public Employee(int employeeID, String name, String department, double payRate)
@@ -65,6 +69,29 @@ public class Employee
         if (this.hoursWorked <= 40) {this.workedOvertime = false;} else {this.workedOvertime = true;}}
 
     //methods
+
+    public void punchTimeCard() //in order to save after program closes, maybe implement filereader/writer?
+    {
+        this.isClockedIn = !this.isClockedIn;
+
+        //LocalDateTime clockIn;
+        if (this.isClockedIn)
+        {
+            LocalDateTime clockIn = LocalDateTime.now();
+            this.clockInTime = clockIn;
+        }
+
+        else
+        {
+            LocalDateTime clockOut = LocalDateTime.now();
+
+            Duration shiftTime = Duration.between(this.clockInTime, clockOut);
+            double minutesShiftTime = shiftTime.toMinutes();
+            double hoursShiftTime = minutesShiftTime/60;
+
+            this.hoursWorked = hoursWorked + hoursShiftTime;
+        }
+    }
 
 
 }
