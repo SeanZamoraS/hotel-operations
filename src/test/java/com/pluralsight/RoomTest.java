@@ -25,4 +25,28 @@ class RoomTest
                 "because cleanRoom() is supposed to set room to isDirty false");
     }
 
+
+    @Test
+    public void shouldSetRoomToOccupiedandDirty()
+    {
+        //arrange
+        Room testRoom = new Room("Standard", 2, 79.99);
+        //act
+        testRoom.checkIn();
+        //assert
+        Assertions.assertEquals(true, testRoom.isDirty());
+        Assertions.assertEquals(true, testRoom.isOccupied());
+    }
+
+    @Test
+    public void shouldSetRoomToUnoccupied()
+    {
+        //arrange
+        Room testRoom = new Room("Standard", 2, 79.99);
+        //act
+        testRoom.checkOut();
+        //assert
+        Assertions.assertEquals(false, testRoom.isOccupied());
+    }
+
 }
