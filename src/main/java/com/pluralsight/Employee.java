@@ -94,6 +94,24 @@ public class Employee
         }
     }
 
+    public void punchTimeCard(int startTime, int endTime) //military time
+    {
+        int shiftTime;
+
+        if (endTime < startTime)
+        {
+            shiftTime = (endTime + 24) - startTime;
+        }
+
+        else
+        {
+            shiftTime = endTime - startTime;
+        }
+
+        this.hoursWorked = hoursWorked + shiftTime;
+
+    }
+
 
 }
 

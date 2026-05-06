@@ -10,7 +10,8 @@ public class Main
     {
         //employeeTest();
         roomTest();
-        clockTest();
+        //clockTest();
+        clockTest2();
     }
 
     public static void employeeTest()
@@ -52,7 +53,12 @@ public class Main
 
         System.out.println(jimmy.getHoursWorked());
 
+    }
 
+    public static void clockTest2()
+    {
+        jimmy.punchTimeCard(23, 2);
+        System.out.println(jimmy.getHoursWorked());
     }
 
 
