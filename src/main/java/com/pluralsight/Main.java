@@ -9,9 +9,10 @@ public class Main
     public static void main()
     {
         //employeeTest();
-        roomTest();
+        //roomTest();
         //clockTest();
-        clockTest2();
+        //clockTest2();
+        hotelTest();
     }
 
     public static void employeeTest()
@@ -59,6 +60,18 @@ public class Main
     {
         jimmy.punchTimeCard(23, 2);
         System.out.println(jimmy.getHoursWorked());
+    }
+
+    public static void hotelTest()
+    {
+        Hotel hotel = new Hotel("Bob's Hotel", 10, 20);
+
+        //hotel.bookRooms(5, false);
+
+        System.out.println(hotel.bookRooms(5, false));
+        System.out.println(hotel.getAvailableRooms());
+        System.out.println(hotel.getAvailableSuites());
+
     }
 
 

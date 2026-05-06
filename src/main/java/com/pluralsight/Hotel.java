@@ -41,13 +41,13 @@ public class Hotel
     {
         if (isSuite && getAvailableSuites() > roomAmount)
         {
-            this.numberOfBookedSuites =- roomAmount;
+            this.numberOfBookedSuites += roomAmount; //must add, do not subtract
             return true;
         }
 
         else if ((!isSuite) && getAvailableRooms() > roomAmount)
         {
-            this.numberOfBookedRooms =- roomAmount;
+            this.numberOfBookedRooms = this.numberOfBookedRooms + roomAmount;
             return true;
         }
 
